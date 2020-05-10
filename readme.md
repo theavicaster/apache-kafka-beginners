@@ -5,7 +5,7 @@
 *  Topic is a stream of data, identified by name.
 *  Can have multiple topics.
 *  Each topic is split into partitions.
-*  Partitions are ordered, with each message getting and incremental ID called offset.
+*  Partitions are ordered, with each message getting an incremental ID called offset.
 *  Offsets only make sense for a particular partition.
 *  i.e, topic a partition 0 offset 5 may happen after topic a partition 1 offset 5.
 *  Data is only kept for a limited time.
