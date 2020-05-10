@@ -75,4 +75,9 @@
 *  That's why 3 is a good idea, one broker can be down and another for maintenance and things will be OK.
 *  As long as no. of partitions is constant, same message key goes to same partition through hashing.
 
+## Startup
 
+```
+cd C:\kafka_2.12-2.5.0
+zookeeper-server-start.bat config\zookeeper.properties
+```
