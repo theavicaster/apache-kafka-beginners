@@ -7,7 +7,7 @@
 *  Each topic is split into partitions.
 *  Partitions are ordered, with each message getting an incremental ID called offset.
 *  Offsets only make sense for a particular partition.
-*  i.e, topic a partition 0 offset 5 may happen after topic a partition 1 offset 5.
+*  i.e, topic one partition 0 offset 5 may happen after topic one partition 1 offset 5.
 *  Data is only kept for a limited time.
 
 
@@ -75,16 +75,4 @@
 *  That's why 3 is a good idea, one broker can be down and another for maintenance and things will be OK.
 *  As long as no. of partitions is constant, same message key goes to same partition through hashing.
 
-# Kafka CLI
 
-## Startup
-
-```
-cd C:\kafka_2.12-2.5.0
-zookeeper-server-start.bat config\zookeeper.properties
-
-cd C:\kafka_2.12-2.5.0
-kafka-server-start.bat config\server.properties
-```
-
-## 
