@@ -118,7 +118,7 @@
 
 ## Controlling Consumer Liveliness
 
-*  In addition to polling, consumers also talk to brokers in a other way. Heartbeats are sent to one broker acting as a consumer coordinator.
+*  In addition to polling, consumers also talk to brokers in another way. Heartbeats are sent to one broker acting as a consumer coordinator.
 *  If heartbeat stops, rebalancing would occur.
 *  Additionally, polling must also be done regularly. max.poll.interval.ms is the maximum time after which no poll means consumer is dead.
 *  If processing takes time like in Spark, Kafka might think the consumer is dead. So check this.
