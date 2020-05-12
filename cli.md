@@ -9,6 +9,14 @@ cd C:\kafka_2.12-2.5.0
 kafka-server-start.bat config\server.properties
 ```
 
+## Shutdown
+
+```
+kafka-server-stop.bat
+
+zkserver stop
+```
+
 By default -
 *  Zookeeper runs on port 2181.
 *  Kafka runs on port 9092.
