@@ -97,3 +97,31 @@
 *  By default, up to 5 messages at a time in flight, i.e can send 5 individual messages at a time. If there's more than five appearing to producer, then Kafka starts smartly batching the messages that are waiting.
 *  At the cost of a small delay, linger.ms=5 waits around 5ms to batch together messages and increase throughput. Any message bigger than batch.size won't be batched and at that point Kafka will send forward.
 *  snappy is a good compression algorithm for JSON/log text messages.
+
+---
+
+## Idempotent Consumer
+
+*  Idempotent consumers overcome the duplicate message problem of at least once delivery semantics, i.e offsets are committed only after processing is done, if processing fails duplicate messages may be sent.
+*  Now, if each message had a unique ID, we could store them at unique positions in a database, or do some unique process only for them, i.e processing a message twice would mean overwriting a duplicate at the same position etc. so the entire system isn't affected.
+
+
+## Consumer Poll Behavior
+
+*  Unlike other messenger buses, Kafka consumers poll the broker. Consumers keep asking the broker for data immediately if possible.
+*  Some settings - fetch.min.bytes, max.poll.records, max.partitions.fetch.bytes, fetch.max.bytes.
+
+## Offset Commits
+
+*  Either offsets are committed at regular intervals and batches are synchronously processed.
+*  Or a batch is built up, and when ready, manually committed.
+
+## Controlling Consumer Liveliness
+
+*  In addition to polling, consumers also talk to brokers in a other way. Heartbeats are sent to one broker acting as a consumer coordinator.
+*  If heartbeat stops, rebalancing would occur.
+*  Additionally, polling must also be done regularly. max.poll.interval.ms is the maximum time after which no poll means consumer is dead.
+*  If processing takes time like in Spark, Kafka might think the consumer is dead. So check this.
+
+
+
