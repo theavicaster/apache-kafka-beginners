@@ -3,8 +3,7 @@
 ## Startup
 
 ```
-cd C:\kafka_2.12-2.5.0
-zookeeper-server-start.bat config\zookeeper.properties
+zkserver
 
 cd C:\kafka_2.12-2.5.0
 kafka-server-start.bat config\server.properties
