@@ -75,4 +75,25 @@
 *  That's why 3 is a good idea, one broker can be down and another for maintenance and things will be OK.
 *  As long as no. of partitions is constant, same message key goes to same partition through hashing.
 
+---
 
+## Producer Settings
+
+*  If you have replication.factor=3, min.insync.replicas=2, acks=all you can tolerate at most 1 broker going down, or you'll have an exception when producer sends.
+*  retries setting sends data again upon transient failures (exceptions like above). retry.backoff.ms sets interval. delivery.timeout.ms sets maximum time for retries. 
+*  If key based ordering is used, then retries can mess up the order of messages!
+
+## Idempotent Producer
+
+*  Normal case - Producer -> produce -> Kafka -> commit -> ack -> Producer
+*  Now, if ack fails, Producer sends a duplicate message through retry, and Kafka commits it twice!
+*  With Idempotent Producer, the produce request has an ID. Kafka sees that it's already got that id, so it sends back another ack, hopefully not failing this time.
+
+## Message Compression
+
+*  Compression batches many messages together into one. Smaller producer request size.
+*  Better latency, throughput, disk utilization.
+*  Producers and consumers must dedicate some CPU cycles to compression and decompression though. (minor)
+*  By default, up to 5 messages at a time in flight, i.e can send 5 individual messages at a time. If there's more than five appearing to producer, then Kafka starts smartly batching the messages that are waiting.
+*  At the cost of a small delay, linger.ms=5 waits around 5ms to batch together messages and increase throughput. Any message bigger than batch.size won't be batched and at that point Kafka will send forward.
+*  snappy is a good compression algorithm for JSON/log text messages.
