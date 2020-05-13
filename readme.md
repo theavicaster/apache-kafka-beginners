@@ -1,4 +1,4 @@
-# Theory
+# Study Notes
 
 ## Topics, Partitions and Offsets
 
@@ -122,6 +122,17 @@
 *  If heartbeat stops, rebalancing would occur.
 *  Additionally, polling must also be done regularly. max.poll.interval.ms is the maximum time after which no poll means consumer is dead.
 *  If processing takes time like in Spark, Kafka might think the consumer is dead. So check this.
+
+---
+
+# Guidelines
+
+*  Small cluster (<6 brokers) - 2 * #brokers partitions.
+*  Big cluster (>12 brokers) - 1 * #brokers partitions.
+*  Choosing number of partitions right is very important. While larger number of partitions are trending, too many, like 1000 for a topic is wasteful.
+*  If we need many consumers, or producer sends a lot of data, we need to adjust the partitions, because clusters can have groups of at most the number of partitions.
+*  Replication factor atleast 2, usually 3, sometimes 4, never 1. Need to consider the latency of acks and higher disk space.
+
 
 
 
