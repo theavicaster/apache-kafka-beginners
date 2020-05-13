@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.util.Properties"/>
+    <fullyQualifiedTypeName name="org.apache.kafka.common.serialization.StringSerializer"/>
+    <fullyQualifiedTypeName name="org.apache.kafka.clients.producer.RecordMetadata"/>
+    <fullyQualifiedTypeName name="java.util.concurrent.CountDownLatch"/>
+    <fullyQualifiedTypeName name="org.apache.kafka.common.errors.WakeupException"/>
+    <fullyQualifiedTypeName name="com.twitter.hbc.core.Hosts"/>
+    <fullyQualifiedTypeName name="com.twitter.hbc.core.HttpHosts"/>
+    <fullyQualifiedTypeName name="com.twitter.hbc.core.Constants"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="com.google.common.collect.Lists"/>
+    <fullyQualifiedTypeName name="com.twitter.hbc.core.Client"/>
+    <fullyQualifiedTypeName name="java.util.concurrent.TimeUnit"/>
+    <fullyQualifiedTypeName name="org.apache.kafka.clients.producer.KafkaProducer"/>
+    <fullyQualifiedTypeName name="org.apache.kafka.clients.producer.ProducerRecord"/>
+    <fullyQualifiedTypeName name="org.apache.kafka.clients.producer.Callback"/>
+    <fullyQualifiedTypeName name="org.apache.kafka.clients.producer.ProducerConfig"/>
+    <fullyQualifiedTypeName name="org.apache.http.client.CredentialsProvider"/>
+    <fullyQualifiedTypeName name="org.elasticsearch.client.RestHighLevelClient"/>
+    <fullyQualifiedTypeName name="org.elasticsearch.common.xcontent.XContentType"/>
+    <fullyQualifiedTypeName name="org.slf4j.LoggerFactory"/>
+    <fullyQualifiedTypeName name="org.elasticsearch.client.RequestOptions"/>
+    <fullyQualifiedTypeName name="org.elasticsearch.action.index.IndexResponse"/>
+    <fullyQualifiedTypeName name="org.slf4j.Logger"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="com.google.gson.JsonParser"/>
+    <fullyQualifiedTypeName name="org.elasticsearch.action.bulk.BulkRequest"/>
+    <fullyQualifiedTypeName name="org.elasticsearch.action.bulk.BulkResponse"/>
+</qualifiedTypeNameHistroy>
